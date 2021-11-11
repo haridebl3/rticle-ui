@@ -84,14 +84,16 @@ export default function Single({
                 {dateObj.getDate()}, {dateObj.getFullYear()}
               </p>
               <ThemeProvider theme={myTheme}>
-                <MUIRichTextEditor
-                  label="Type something here..."
-                  defaultValue={content}
-                  readOnly={true}
-                  toolBar={false}
-                  inlineToolbar={true}
-                  controls={[]}
-                />
+                <div className="w-screen max-w-screen-xl max-w-screen-lg max-w-screen-sm h-full">
+                  <MUIRichTextEditor
+                    label="Type something here..."
+                    defaultValue={content}
+                    readOnly={true}
+                    toolBar={false}
+                    inlineToolbar={true}
+                    controls={[]}
+                  />
+                </div>
               </ThemeProvider>
             </div>
           </article>
