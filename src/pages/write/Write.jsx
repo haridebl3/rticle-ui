@@ -92,7 +92,7 @@ export default function Write() {
         setCoverPicUrl={setCoverPicUrl}
       />
 
-      <div className="w-full max-w-screen-xl max-w-screen-lg max-w-screen-sm h-screen border-2 m-32 p-14">
+      <div className="w-screen max-w-screen-xl max-w-screen-lg max-w-screen-sm h-full border-2 m-32 p-14">
         <ThemeProvider theme={myTheme}>
           <MUIRichTextEditor
             ref={editor}
