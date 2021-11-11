@@ -7,6 +7,21 @@ import MUIRichTextEditor from "mui-rte";
 import { getLatestArticles } from "../services/article.service";
 import _ from "lodash";
 
+const months = {
+  1: "January",
+  2: "February",
+  3: "March",
+  4: "April",
+  5: "May",
+  6: "June",
+  7: "July",
+  8: "August",
+  9: "September",
+  10: "October",
+  11: "November",
+  12: "December",
+};
+
 export default function Single({
   title,
   coverPic,
@@ -19,6 +34,8 @@ export default function Single({
   const myTheme = createTheme({
     // Set up your custom MUI theme here
   });
+
+  const dateObj = new Date(date);
   const [latestArticles, setLatestArticles] = useState();
   useEffect(() => {
     async function getLatest() {
@@ -40,7 +57,11 @@ export default function Single({
                     width: "1600px",
                     height: "312px",
                   }}
-                  src={coverPic}
+                  src={
+                    coverPic ||
+                    "https://storage.googleapis.com/rticle-assets/backup-cover.svg"
+                  }
+                  alt="Cover Pic"
                 />
               </a>
             </div>
@@ -59,7 +80,8 @@ export default function Single({
                 <a href="#" class="font-semibold hover:text-gray-800">
                   {author}
                 </a>
-                , Published on April 25th, 2020
+                , Published on {months[dateObj.getMonth() + 1]}{" "}
+                {dateObj.getDate()}, {dateObj.getFullYear()}
               </p>
               <ThemeProvider theme={myTheme}>
                 <MUIRichTextEditor
@@ -90,15 +112,19 @@ export default function Single({
               </div>
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              {_.map(latestArticles, (latestArticle) => {
-                <PostTemplateSkin
-                  category={latestArticle.category}
-                  title={latestArticle.title}
-                  text={latestArticle.description}
-                  views={latestArticle.views}
-                  commentsCount="0"
-                />;
-              })}
+              {latestArticles?.length > 0 &&
+                _.map(latestArticles, (latestArticle) => {
+                  return (
+                    <PostTemplateSkin
+                      category={latestArticle.category}
+                      title={latestArticle.title}
+                      text={latestArticle.description}
+                      views={latestArticle.views}
+                      coverPicUrl={latestArticle.coverPicUrl}
+                      commentsCount="0"
+                    />
+                  );
+                })}
             </div>
           </div>
         </section>

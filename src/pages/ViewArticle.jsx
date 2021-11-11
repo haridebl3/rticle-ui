@@ -9,7 +9,6 @@ export default function ViewArticle() {
   useEffect(() => {
     async function getArticleById() {
       setArticle(await getArticle(id));
-      console.log("AWAIT GETARTICLE(ID)", await getArticle(id));
     }
     getArticleById();
   }, []);
@@ -23,6 +22,7 @@ export default function ViewArticle() {
           coverPic={article.coverPicUrl}
           content={article.content}
           author={article.author}
+          date={article.createdAt}
         />
       )}
     </div>
