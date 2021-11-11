@@ -71,7 +71,7 @@ export default function Write() {
         title={title}
         description={description}
         category={category}
-        coverPic={coverPicUrl}
+        coverPic={null}
         content={content}
         author={author}
         date={new Date().toISOString()}
