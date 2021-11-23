@@ -6,10 +6,12 @@ export default function BlogTemplate(props) {
     <div>
       <article className=" flex flex-col shadow my-4  ">
         <a href="#" className="hover:opacity-75  aspect-w-16 aspect-h-9">
-          <img className="width-auto"
+          <img
+            className="width-auto"
             src={props.coverPicUrl}
             style={{
               height: "312px",
+              width: "1600px",
             }}
           />
         </a>
