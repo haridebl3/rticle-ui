@@ -47,7 +47,7 @@ export default function Single({
   return (
     <div>
       <Navbar />
-      <div class="mx-auto flex flex-wrap pt-6 px-20 bg-gray-200">
+        <div class="p-20">
         <section class=" flex flex-col items-center px-3">
           <article class="flex flex-col shadow my-4">
             <div className="pa-10">
@@ -84,7 +84,7 @@ export default function Single({
                 {dateObj.getDate()}, {dateObj.getFullYear()}
               </p>
               <ThemeProvider theme={myTheme}>
-                <div className="w-screen max-w-screen-xl max-w-screen-lg max-w-screen-sm h-full">
+                <div class="w-screen max-w-screen-xl max-w-screen-lg max-w-screen-sm h-full">
                   <MUIRichTextEditor
                     label="Type something here..."
                     defaultValue={content}
@@ -98,9 +98,9 @@ export default function Single({
             </div>
           </article>
         </section>
-      </div>
+        </div>
 
-      <div className="mx-auto flex flex-wrap p-6 px-20 bg-gray-200">
+      <div className="mx-auto flex flex-wrap p-6 bg-gray-200">
         <section className="text-gray-600 body-font bg-white w-full">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col">
