@@ -47,7 +47,7 @@ export default function Single({
   return (
     <div>
       <Navbar />
-        <div class="p-20">
+        <div class="mx-20 p-20 pt-6">
         <section class=" flex flex-col items-center px-3">
           <article class="flex flex-col shadow my-4">
             <div className="pa-10">
